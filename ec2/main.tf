@@ -11,3 +11,9 @@ resource "aws_instance" "this" {
     Name = each.value.instance_name
   }
 }
+
+resource "aws_eip" "this" {
+  for_each = aws_instance.this
+  instance = each.value.id
+  vpc      = true
+}
