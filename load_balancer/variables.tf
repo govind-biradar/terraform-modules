@@ -8,10 +8,6 @@ variable "lb_internal" {
   type        = bool
 }
 
-variable "lb_type" {
-  description = "The type of load balancer (application or network)"
-  type        = string
-}
 
 variable "lb_subnets" {
   description = "The subnets in which to create the load balancer"
