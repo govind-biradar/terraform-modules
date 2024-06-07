@@ -5,6 +5,7 @@ resource "aws_instance" "this" {
   subnet_id     = var.subnet_ids[each.key % length(var.subnet_ids)] 
   key_name      = each.value.key_name
   vpc_security_group_ids = [var.security_group]
+
   associate_public_ip_address = true
 
   tags = {
